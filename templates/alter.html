@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            $('#btn').click(function(){
+                $('.alter').show()
+            })
+        }) -->
+        
+    </script>
+    <style>
+        body{
+            font-family: 幼圆;
+            position: relative;
+        }
+        .bt{
+            text-align: center;
+            font-family: 幼圆;
+            margin-top: 40px;
+        }
+        .head a{
+            text-decoration: none;
+            font-size: 12px;
+            color: rgb(11, 99, 99);
+        }
+        a:hover{
+            font-weight: bold;
+            font-size: 13px;
+        }
+        .con {
+            width: 691px;
+            margin: 50px auto 0 auto;
+            text-align: center;
+        }
+        .form-horizontal{
+            margin-left: 90px;
+        }
+        
+        .form-control {
+            width: 300px;
+        }
+        .alter {
+            width: 691px;
+            margin: 50px auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <p class='head' style="background-color: #dddddd;line-height: 30px;">
+        <a href="{{ url_for('index') }}" style="margin-left: 100px;">返回首页</a>
+    </p>
+    <h3 class='bt'>正在修改学生信息页面    <small>^_^ ~ ~ ~ ~ </small></h3>
+    <!-- 选择 -->
+    <div class="con">
+        <form class="form-inline" method="POST" action="{{url_for('alter',sign='xz')}}">
+            <div class="form-group">
+              <label for="exampleInputName2">请输入要修改的学生的学号</label>&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe" name='pk'>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" class="btn btn-default" id='btn' value='修 改'>{{err}}{{ok}}
+          </form>
+    </div>
+
+    {% if stu %}
+        <!-- 修改 -->
+    <div class="alter">
+        <form class="form-horizontal" method="POST" action="{{url_for('alter',sign='alt',id=stu.id)}}">
+            <div class="form-group">
+                <label for="inputname" class="col-sm-2 control-label">学生姓名</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputEmail3" value="{{stu.name}}" name='name'>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputage" class="col-sm-2 control-label">学生年龄</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputPassword3" value="{{stu.age}}" name='age'>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputsex" class="col-sm-2 control-label">学生性别</label>
+                <div class="col-sm-10">
+                    <input type="radio" name="sex" id="inlineRadio1" value="m" checked='checked'> 男 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="sex" id="inlineRadio1" value="f"> 女
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputenglish" class="col-sm-2 control-label">英语成绩</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="inputEmail3" value="{{stu.english}}" name='english'>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputpython" class="col-sm-2 control-label">python成绩</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="inputPassword3" value="{{stu.python}}" name='python1'>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputc" class="col-sm-2 control-label">C语言成绩</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="inputEmail3" value="{{stu.c}}" name='c'>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" class="btn btn-default" value="修 改">
+                </div>
+            </div>
+            {{err1}}{{ok1}}
+        </form>
+    </div>
+    {% endif %}
+    <div style="width: 189px;height: 273px;position: absolute;right:100px;bottom: -421px;">
+        <img src="{{url_for('static',filename='/aa.png')}}" alt="" style="width: 189px;height: 273px;">
+    </div>
+</body>
+</html>

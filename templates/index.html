@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            /* height: 600px; */
+            /* background-color: rgb(197, 219, 228); */
+            position: relative;
+            font-family: 幼圆;
+        }
+        .bt{
+            text-align: center;
+            font-family: 幼圆;
+        }
+        .list-group{
+            width: 400px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .list-group a{
+            text-decoration: none;
+
+        }
+        .head{
+            text-decoration: none;
+            font-size: 12px;
+            color: rgb(33, 124, 124);
+        }
+        a:hover{
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .list-group-item:hover{
+            background: rgb(66, 148, 148);
+        }
+    </style>
+</head>
+<body>
+    <p class='head' style="background-color: #dddddd;line-height: 30px;">
+        <span style="margin-left: 80px;">欢迎来到学生信息管理系统</span>
+    </p>
+    <div style="height: 20px;"></div>
+    <h3 class='bt'>欢迎来到学生信息管理系统    <small>^_^ ~ ~ ~ ~ </small></h3>
+    <div style="height: 20px;"></div>
+    <ul class="list-group">
+        <li class="list-group-item"><a href="{{ url_for('add') }}">录入学生信息</a></li>
+        <li class="list-group-item"><a href="{{ url_for('remove') }}">删除学生信息</a></li>
+        <li class="list-group-item"><a href="{{ url_for('alter') }}">修改学生信息</a></li>
+        <li class="list-group-item"><a href="{{ url_for('find') }}">查询学生信息</a></li>
+        <li class="list-group-item"><a href="{{url_for('order') }}">排序</a></li>
+        <li class="list-group-item"><a href="{{ url_for('num') }}">统计学生总人数</a></li>
+        <li class="list-group-item"><a href="{{ url_for('total') }}">显示全部学生信息</a></li>
+    </ul>
+    <div style="width: 189px;height: 273px;position: absolute;right:100px;bottom: -180px;">
+        <img src="{{url_for('static',filename='/aa.png')}}" alt="" style="width: 189px;height: 273px;">
+    </div>
+
+
+
+
+</body>
+</html>

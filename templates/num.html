@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人数</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            font-family: 幼圆;
+            position: relative;
+        }
+        .bt{
+            text-align: center;
+            margin-top: 40px;
+        }
+        .head a{
+            text-decoration: none;
+            font-size: 12px;
+            color: rgb(11, 99, 99);
+        }
+        a:hover{
+            font-weight: bold;
+            font-size: 13px;
+        }        
+        .count{
+            width: 300px;
+            height: 70px;
+            border: #c79090af 2px solid;
+            background: rgb(190, 149, 149);
+            border-radius: 10px;
+            margin: 40px auto;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+            line-height: 70px;
+        }
+    </style>
+</head>
+<body>
+    <p class='head' style="background-color: #dddddd;line-height: 30px;">
+        <a href="{{ url_for('index') }}" style="margin-left: 100px;">返回首页</a>
+    </p>
+    <h3 class='bt'>正在学生总人数查询页面    <small>^_^ ~ ~ ~ ~ </small></h3>
+    <div class="count">
+        学生的总人数为：{{count}}
+    </div>
+    <div style="width: 189px;height: 273px;position: absolute;right:100px;bottom: -395px;">
+        <img src="{{url_for('static',filename='/aa.png')}}" alt="" style="width: 189px;height: 273px;">
+    </div>
+</body>
+</html>

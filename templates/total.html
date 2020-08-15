@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全部学生信息</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            font-family: 幼圆;
+        }
+        .bt{
+            text-align: center;
+            font-family: 幼圆;
+            margin-top: 40px;
+        }
+        .head a{
+            text-decoration: none;
+            font-size: 12px;
+            color: rgb(11, 99, 99);
+        }
+        a:hover{
+            font-weight: bold;
+            font-size: 13px;
+        }
+        .con {
+            width: 691px;
+            margin: 50px auto 0 auto;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <p class='head' style="background-color: #dddddd;line-height: 30px;">
+        <a href="{{ url_for('index') }}" style="margin-left: 100px;">返回首页</a>
+    </p>
+    <h3 class='bt'>正在全部学生信息页面    <small>^_^ ~ ~ ~ ~ </small></h3>
+
+    <table class="table table-bordered" style="margin: 30px auto;width: 1000px;">
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>性别</td>
+            <td>英语成绩</td>
+            <td>python成绩</td>
+            <td>C语言成绩</td>
+        </tr>  
+        {% for item in student %} 
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{item.age}}</td>
+            <td>{{item.sex}}</td>
+            <td>{{item.english}}</td>
+            <td>{{item.python}}</td>
+            <td>{{item.c}}</td>
+        </tr>
+        {% endfor %}
+        
+
+    </table>
+</body>
+</html>
